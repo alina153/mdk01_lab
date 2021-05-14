@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Добавить Мультик";
+}
+
+@using(Html.BeginForm("Add", "Cartoon", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td><p>Название: </p></td>
+            <td><input type="text" name="name"/> </td>
+        </tr>
+        <tr>
+            <td><p>Студия: </p></td>
+            <td><input type="text" name="studio"/> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Отправить"/> </td>
+            <td></td>
+        </tr>
+    </table>
+}

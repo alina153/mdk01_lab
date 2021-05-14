@@ -1,0 +1,30 @@
+﻿@using DBApp.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <table class='table'>
+        <tr>
+            <td><b>Идентификатор</b></td>
+            <td><b>Название</b></td>
+            <td><b>Студия</b></td>
+        </tr>
+        @foreach (Cartoon b in Model)
+        {
+            <tr>
+                <td><p>@b.Id</p></td>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Studio</p></td>
+                <td>
+               @using(Html.BeginForm("Delete", "Cartoon", FormMethod.Post))
+               {
+                   <input type="hidden" value="@b.Id" name="id" />
+                   <input type="submit" value="Удалить"/>
+               }
+                </td>
+            </tr>
+            
+        }
+    </table>
+</div>
